@@ -1,5 +1,7 @@
 #TODO#
 
+##TECHNIQUE##
+
 - favicon
 - flaunt.js
 - browsehappy
