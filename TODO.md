@@ -12,3 +12,5 @@
 - gabs éditables 15s après avoir été envoyés (locked -> true)
 - type d'encryption password ?
 - #each rangé chronologiquement / modulairement
+- high availibility (https://bulletproofmeteor.com/architecture/deploying-a-highly-available-meteor-cluster)
+- check compatibilité avec Windows Server 2012
