@@ -1,0 +1,32 @@
+.charCount { color: #aaa; font-size: .75em; float: right; margin: -5px 2px 0 0; }
+
+img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
+
+#homeWrapper {
+    margin: auto;
+    display: table;
+    min-width: 500px;
+    max-width: 500px;
+    width: 500px;
+}
+
+#gabForm {
+    display: inline-block;
+    position: relative;
+}
+
+#gabArea { margin: 0 }
+
+#gabSubmit {
+    position: absolute;
+    top: 0;
+    right: -25px;
+    height: 87px;
+
+    background: #7ccaff;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#0C000000)";
+    border: 1px solid #3b88c3;
+    text-shadow: 0 1px 1px rgba(0,0,0,1);
+}
+

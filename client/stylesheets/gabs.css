@@ -1,0 +1,57 @@
+.gabsContainer { /* Not sure thats where it should be */
+
+    text-align: left;
+
+    /* Test values before Friends & Trendy divs */
+    min-width: 529px;
+    width: 529px;
+    max-width: 529px;
+
+    list-style: none;
+    background: rgba(255,255,255,0.5);
+    padding: 7px;
+    margin: 20px auto 0 auto;
+    border: 1px solid #2E3234;
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05),
+    0 0 15px rgba(0,0,0,0.4),
+    0 1px 0 rgba(0,0,0,0.1);
+}
+
+.gabContainer {
+    margin: 0 0 3px 0;
+    padding: 5px;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.4);
+    transition: 0s;
+    font-size: .9em;
+    min-height: 50px;
+}
+.gabContainer:hover {
+    background: #eee;
+    transition: 0s;
+}
+.gabContainer ul { padding: 0; }
+
+.gabContainer img {
+    vertical-align: middle;
+    height: 50px; width: 50px;
+}
+
+.gabPicture {
+    vertical-align: middle;
+    padding: 0 0 0 10px;
+    display: inline-block;
+    width: auto;
+}
+.gabContent {
+    vertical-align: middle;
+    padding: 0 0 0 15px;
+    top: 0;
+    display: inline-block;
+    width: 420px;
+}
+
+.gabContent p { word-wrap: break-word; margin: 5px 0 5px 0; line-height: 18px; }

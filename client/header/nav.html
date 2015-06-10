@@ -1,0 +1,15 @@
+<template name="nav">
+    <nav>
+        <div id="navWrapper">
+            <div id="navTitle"></div>
+            <ul>
+                {{#if currentUser}}
+                    <li><a href="{{pathFor 'home'}}" id="home" class="navLink">Home</a></li>
+                    <li><a href="{{pathFor 'profile'}}" id="profile" class="navLink">Profile</a></li>
+                {{else}}
+                    <li><a href="{{pathFor 'login'}}" id="login" class="navLink">Login</a></li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
+</template>

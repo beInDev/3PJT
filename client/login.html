@@ -1,0 +1,85 @@
+<template name="login">
+    <div id="loginContainer" class="container">
+        {{#unless currentUser}}
+            <div id="cookies">
+                To bring you Gabbler, we use cookies on our website. By using our services, you agree to our <a href="{{pathFor 'home'}}">Cookie Use</a>.
+                <a class="close">×</a>
+            </div>
+            <div class="left content" id="welcomeLogin">
+                <h1>Welcome !</h1>
+                <p>Gabbler is the shit. Basically it's the best thing to ever grace your goddamn world and you <strong>must</strong> embrace it. Right now. Also, share with your friends because
+                <strong>here we come the fuck up</strong>. Yup baby, that's us. Single&nbsp;?&nbsp;Get&nbsp;ready&nbsp;to&nbsp;gabble&nbsp;:</p>
+
+                <ul>
+                    <li>Share stuff & shit whatever they might be.</li>
+                    <li>Gab like there's not tomorrow.</li>
+                    <li>Be free.</li>
+                </ul>
+
+                In other words: <strong>wow</strong>. That shit is tighter than your mom on election day.<br/>
+                And if you don't know what that means, gab it up. Right. Now.
+            </div>
+            <div class="right content" id="formsLogin">
+                <form id="loginForm">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="loginMessage" class="warning">{{ loginMessage }}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="text" id="loginUsername" placeholder="Email or username" size="28" maxlength="15"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="password" id="loginPassword" placeholder="Password" maxlength="18"/>
+                                </td>
+                                <td>
+                                    <input type="submit" id="loginSubmit" value="Log in">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+                <form id="registerForm">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id="registerMessage" class="warning">{{ registerMessage }}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" id="registerUsername" placeholder="Username" size="28" maxlength="15"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="password" id="registerPassword" placeholder="Password" size="28" maxlength="18"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <!-- Did you know that 254 chars is the official maximum length for a valid email address ? Now you know. -->
+                                    <input type="email" id="registerEmail" placeholder="Email address" size="28" maxlength="254"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" id="registerSubmit" value="Sign up to Gabbler for free !">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        {{else}}
+            You are already logged in as {{currentUser.username}}.
+            Click <a href="{{pathFor 'home'}}">here</a> to go to your dashboard, or <a class="logout">here</a> to logout.
+        {{/unless}}
+    </div>
+</template>

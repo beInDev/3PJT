@@ -1,0 +1,54 @@
+<template name="home">
+    {{#if currentUser }}
+    <div id="homeWrapper">
+        <div id="userContainer" class="homeContainer container">
+            <table>
+                <tr>
+                    <td colspan="2" id="userContainer">
+                        <span class="fullname separator">Gabble Newell</span><span class="username">{{currentUser.username}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="content" id="pictureContainer">
+                            <img src="GabbleN.png" alt="profile picture" id="userPicture"/>
+                        </div>
+                    </td>
+                    <td>
+                        <form id="gabForm">
+                            <textarea rows="5" cols="51" maxlength="255" id="gabArea"></textarea>
+                            <input type="submit" id="gabSubmit" value=">"/>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span class="charCount"> {{charCount}} / 255</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+            <ul class="gabsContainer">
+
+                {{#each gabs}}
+                    {{> gab}}
+                {{/each}}
+            </ul>
+    </div>
+    {{/if}}
+
+</template>
+
+<template name="gab">
+    <li class="gabContainer">
+        <div class="gabPicture">
+            <img src="GabbleN.png" alt="gabbler picture"/>
+        </div>
+        <div class="gabContent">
+            <span class="username separator">
+                {{#with getUser author }} {{username}} <!-- {{emails.[0].address}} --> {{/with}}
+            </span> <time class="separator">{{ formatDate createdAt }}</time><time>{{ formatHour createdAt }}</time><br />
+            <p>{{ content }}</p>
+        </div>
+    </li>
+</template>
