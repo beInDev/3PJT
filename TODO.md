@@ -4,6 +4,7 @@
 - flaunt.js
 - browsehappy
 - legal pages (twitter)
+- pondre blabla de Welcome
 - #cookies dans reactiveVar ?
 - forgot password
 - charCount a la twitter ?
