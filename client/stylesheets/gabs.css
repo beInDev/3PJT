@@ -20,11 +20,12 @@
 }
 
 .gabContainer {
-    margin: 0 0 3px 0;
+    margin: 0 0 0 0;
     padding: 5px;
     background: #fff;
-    border-radius: 7px;
-    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 3px;
+    border: solid rgba(0,0,0,0.4);
+    border-width: 1px 1px 0 1px;
     transition: 0s;
     font-size: .9em;
     min-height: 50px;
@@ -42,16 +43,17 @@
 
 .gabPicture {
     vertical-align: middle;
-    padding: 0 0 0 10px;
     display: inline-block;
     width: auto;
 }
 .gabContent {
     vertical-align: middle;
-    padding: 0 0 0 15px;
-    top: 0;
+    padding: 0 0 0 10px;
     display: inline-block;
-    width: 420px;
+    width: 445px;
 }
 
 .gabContent p { word-wrap: break-word; margin: 5px 0 5px 0; line-height: 18px; }
+
+.selfgab {  }
+.selfgab:hover {  }

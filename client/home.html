@@ -16,7 +16,9 @@
                     </td>
                     <td>
                         <form id="gabForm">
-                            <textarea rows="5" cols="51" maxlength="255" id="gabArea"></textarea>
+                            <label for="gabArea">
+                                <textarea rows="5" cols="51" maxlength="255" id="gabArea"></textarea>
+                            </label>
                             <input type="submit" id="gabSubmit" value=">"/>
                         </form>
                     </td>
@@ -29,25 +31,31 @@
             </table>
         </div>
             <ul class="gabsContainer">
-
                 {{#each gabs}}
                     {{> gab}}
                 {{/each}}
             </ul>
     </div>
     {{/if}}
-
+    <!-- {{emails.[0].address}} to get users email thanks to #with -->
 </template>
 
 <template name="gab">
-    <li class="gabContainer">
+    <li class="gabContainer {{#if equals author currentUser._id}}selfgab{{/if}}">
         <div class="gabPicture">
             <img src="GabbleN.png" alt="gabbler picture"/>
         </div>
         <div class="gabContent">
-            <span class="username separator">
-                {{#with getUser author }} {{username}} <!-- {{emails.[0].address}} --> {{/with}}
-            </span> <time class="separator">{{ formatDate createdAt }}</time><time>{{ formatHour createdAt }}</time><br />
+            <span class="username separator ">
+            {{#unless equals author currentUser._id}}
+                {{#with getUser author }}  {{username}} {{/with}}
+            {{else}}
+                {{ currentUser.username }} (you)
+            {{/unless}}
+            </span>
+
+            <time class="separator">{{ formatDate createdAt }}</time><time>{{ formatHour createdAt }}</time><br />
+
             <p>{{ content }}</p>
         </div>
     </li>

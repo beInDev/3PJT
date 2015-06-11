@@ -11,7 +11,7 @@ a:hover { opacity: 0.8; transition: 0s; }
 .separator:after { content: " · "; color: #aaa; font-weight: 700;}
 .logout { cursor: pointer }
 .warning { color: #d82727; font-size: .75em; margin: -18px 0 0 0; }
-.username { color: #88A5C4; font-size: .9em }
+.username { color: #8899a6; font-size: .9em }
 .fullname { font-size: .9em; font-weight: 700; }
 
 time { font-size: .9em; color: #88A5C4 }

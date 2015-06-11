@@ -3,7 +3,7 @@
           return Session.get("charCount");
       },
       gabs: function () {
-          return Gabs.find({});
+          return Gabs.find().fetch().reverse();
       }
   });
 
@@ -12,12 +12,13 @@
       $("#home").addClass("currentPage");
       Session.setDefault("charCount","0");
 
-      var lol;
-      var filter = /^([0-24-9])+$/;
-      for(var i=0; i<200; i++){
-          if(filter.test(i.toString())) {lol = lol + " " + i; }
-      }
-      console.log(lol);
+      //    GABEN ULTIMATE COUNTING CHALLENGE
+      //var lol;
+      //var filter = /^([0-24-9])+$/;
+      //for(var i=0; i<200; i++){
+      //    if(filter.test(i.toString())) {lol = lol + " " + i; }
+      //}
+      //console.log(lol);
   });
 
   Template.home.events({

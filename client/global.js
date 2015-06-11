@@ -12,3 +12,11 @@ Template.registerHelper('formatDate', function(date) {
 Template.registerHelper('formatHour', function(date) {
     return moment(date).format('HH:mm');
 });
+
+Template.registerHelper('getUser', function (id) {
+    return Meteor.users.findOne({_id: id});
+});
+
+Template.registerHelper('equals', function (something, another) {
+    return(something == another); // might need === ?
+});
