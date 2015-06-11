@@ -1,4 +1,4 @@
-Template.layout.events({ /* body or layout ? need testing */
+Template.body.events({ /* body or layout ? need testing */
     'click .logout': function (event) {
         event.preventDefault();
         Meteor.logout();

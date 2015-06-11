@@ -12,6 +12,8 @@
       $("#home").addClass("currentPage");
       Session.setDefault("charCount","0");
 
+      $("#gabArea").val(Session.get("gabInProgress"));
+
       //    GABEN ULTIMATE COUNTING CHALLENGE
       //var lol;
       //var filter = /^([0-24-9])+$/;
@@ -24,6 +26,7 @@
   Template.home.events({
       'keydown #gabArea, keyup #gabArea': function (event) {
           Session.set("charCount",event.currentTarget.value.length);
+          Session.set("gabInProgress", event.currentTarget.value);
       },
       'click #gabSubmit': function(event, template) {
           event.preventDefault();

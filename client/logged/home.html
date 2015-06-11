@@ -4,8 +4,14 @@
         <div id="userContainer" class="homeContainer container">
             <table>
                 <tr>
-                    <td colspan="2" id="userContainer">
-                        <span class="fullname separator">Gabble Newell</span><span class="username">{{currentUser.username}}</span>
+                    <td></td>
+                    <td id="currentUsernameContainer">
+                        {{#if currentUser.profile.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
+                            <span class="fullname separator">
+                                {{ currentUser.profile.fullname }}
+                            </span>
+                        {{/if}}
+                        <span class="username">{{currentUser.username}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -46,9 +52,24 @@
             <img src="GabbleN.png" alt="gabbler picture"/>
         </div>
         <div class="gabContent">
-            <span class="username separator ">
+            {{#unless equals author currentUser._id}} {{! Is the current user the author ? }}
+                {{#with getUser author }}
+                    {{#if profile.fullname }} {{! Does the author have a fullname ? If yes, then show it. }}
+                <span class="fullname separator">
+                    {{profile.fullname}}
+                </span>
+                    {{/if}}
+                {{/with}}
+            {{else}}
+                {{#if currentUser.profile.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
+                <span class="fullname separator">
+                     {{ currentUser.profile.fullname }}
+                </span>
+                {{/if}}
+            {{/unless}}
+            <span class="username separator">
             {{#unless equals author currentUser._id}}
-                {{#with getUser author }}  {{username}} {{/with}}
+                {{#with getUser author }} {{username}} {{/with}}
             {{else}}
                 {{ currentUser.username }} (you)
             {{/unless}}

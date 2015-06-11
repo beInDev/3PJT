@@ -1,6 +1,6 @@
 .charCount { color: #aaa; font-size: .75em; float: right; margin: -5px 2px 0 0; }
 
-img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
+#userContainer img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
 
 #homeWrapper {
     margin: auto;
@@ -34,3 +34,5 @@ img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; he
     padding-left: 5px !important;
 }
 
+#currentUsernameContainer {
+}

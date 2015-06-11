@@ -1,6 +1,5 @@
 <template name="login">
     <div id="loginContainer" class="container">
-        {{#unless currentUser}}
             <div id="cookies">
                 To bring you Gabbler, we use cookies on our website. By using our services, you agree to our <a href="{{pathFor 'home'}}">Cookie Use</a>.
                 <a class="close">×</a>
@@ -30,12 +29,12 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <input type="text" id="loginUsername" placeholder="Email or username" size="28" maxlength="15"/>
+                                    <input name="username" type="text" id="loginUsername" placeholder="Email or username" size="28" maxlength="15"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="password" id="loginPassword" placeholder="Password" maxlength="18"/>
+                                    <input name="password" type="password" id="loginPassword" placeholder="Password" maxlength="18"/>
                                 </td>
                                 <td>
                                     <input type="submit" id="loginSubmit" value="Log in">
@@ -55,17 +54,17 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="text" id="registerUsername" placeholder="Username" size="28" maxlength="15"/>
+                                    <input name="username" type="text" id="registerUsername" placeholder="Username" size="28" maxlength="15"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="password" id="registerPassword" placeholder="Password" size="28" maxlength="18"/>
+                                    <input name="password" type="password" id="registerPassword" placeholder="Password" size="28" maxlength="18"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td> <!-- Did you know that 254 chars is the official maximum length for a valid email address ? Now you know. -->
-                                    <input type="email" id="registerEmail" placeholder="Email address" size="28" maxlength="254"/>
+                                    <input name="email" type="email" id="registerEmail" placeholder="Email address" size="28" maxlength="254"/>
                                 </td>
                             </tr>
                             <tr>
@@ -77,9 +76,5 @@
                     </table>
                 </form>
             </div>
-        {{else}}
-            You are already logged in as {{currentUser.username}}.
-            Click <a href="{{pathFor 'home'}}">here</a> to go to your dashboard, or <a class="logout">here</a> to logout.
-        {{/unless}}
     </div>
 </template>

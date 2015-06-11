@@ -1,6 +1,6 @@
 Template.nav.events({
     'click #navTitle': function () {
-        Router.go('/');
+        Router.go('/home');
         $(".navLink").removeClass("currentPage");
         $("#home").addClass("currentPage");
     }
