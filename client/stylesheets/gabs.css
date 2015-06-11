@@ -29,6 +29,8 @@
     transition: 0s;
     font-size: .9em;
     min-height: 50px;
+
+    position: relative;
 }
 .gabContainer:last-child {
     border-bottom: 1px solid rgba(0,0,0,0.4);
@@ -58,5 +60,28 @@
 
 .gabContent p { word-wrap: break-word; margin: 5px 0 5px 0; line-height: 18px; }
 
-.selfgab {  }
-.selfgab:hover {  }
+.gabUnliked {
+    border: 1px solid transparent;
+    border-radius: 40%;
+    position: absolute;
+    right: 20px;
+    background: url('unliked.png') no-repeat;
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+}
+.gabUnliked:hover {
+    background: url('liked.png') no-repeat;
+}
+.gabLiked {
+    border: 1px solid transparent;
+    border-radius: 40%;
+    position: absolute;
+    right: 20px;
+    background: url('liked.png') no-repeat;
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+}

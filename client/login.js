@@ -23,7 +23,7 @@ Template.login.events({
     },
     'click #registerSubmit': function(event, template) {
         event.preventDefault();
-        var username =  trimWhiteSpaceInput(template.find('#registerUsername').value),
+        var username = trimWhiteSpaceInput(template.find('#registerUsername').value),
             email = trimWhiteSpaceInput(template.find('#registerEmail').value),
             password = trimWhiteSpaceInput(template.find('#registerPassword').value);
 
@@ -35,7 +35,7 @@ Template.login.events({
                     username: username,
                     password: password,
                     email: email
-                }, function(err) {
+                }, function(err, userId) {
                     if (err) {
                         console.log(err.message);
                         if (err.message === 'Email already exists. [403]') {
@@ -47,6 +47,7 @@ Template.login.events({
                         }
                     }
                 });
+                Meteor.call('createLikes', username); // Once the user is registered we can create his Likes document.
             }
             else
             {

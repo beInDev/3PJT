@@ -36,18 +36,23 @@
                 </tr>
             </table>
         </div>
+        {{#if gabs }}
             <ul class="gabsContainer">
                 {{#each gabs}}
                     {{> gab}}
                 {{/each}}
             </ul>
+        {{/if}}
     </div>
     {{/if}}
     <!-- {{emails.[0].address}} to get users email thanks to #with -->
 </template>
 
 <template name="gab">
-    <li class="gabContainer {{#if equals author currentUser._id}}selfgab{{/if}}">
+    <li class="gabContainer" id="{{ _id }}">
+    {{#unless equals author currentUser._id}}
+        <div class="{{#unless liked _id}}gabUnliked{{else}}gabLiked{{/unless}}"></div>
+    {{/unless}}
         <div class="gabPicture">
             <img src="GabbleN.png" alt="gabbler picture"/>
         </div>
@@ -77,7 +82,7 @@
 
             <time class="separator">{{ formatDate createdAt }}</time><time>{{ formatHour createdAt }}</time><br />
 
-            <p>{{ content }}</p>
+            <p>{{ content }} [{{likeCounter}}] </p>
         </div>
     </li>
 </template>

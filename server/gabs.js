@@ -1,8 +1,8 @@
-// Methods File for all your GAMES Management needs !
+// Methods File for all your GABS needs !
 
 Meteor.methods({
     createGab: function (content) {
-        if (! Meteor.userId()) { // Juuuust making sure
+        if (!Meteor.userId()) { // Juuuust making sure
             throw new Meteor.Error("not-authorized");
         }
         Gabs.insert({
@@ -12,12 +12,14 @@ Meteor.methods({
             createdAt: new Date(),
             hidden: false,
             locked: false
-        }, function(error, gabId) { // thats how u retrieve the just-created document's ID !
-            //Meteor.call('isInGame', Meteor.userId(), gameId);
+        }, function (error, gabId) { // thats how u retrieve the just-created document's ID !
+            //Meteor.call('', Meteor.userId(), gabId);
         });
+    },
+    addLike: function (gabId) {
+        Gabs.update(gabId, { $inc : { 'likeCounter' : 1 }});
+    },
+    removeLike: function (gabId) {
+        Gabs.update(gabId, { $inc : { 'likeCounter' : -1 }});
     }
 });
-
-//Meteor.publish("players", function() {
-//   return Games.findOne({ players: { $in: [Meteor.userId()] } }).players;
-//});

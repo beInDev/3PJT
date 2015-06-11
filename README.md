@@ -3,7 +3,7 @@
 - favicon
 - legal pages (twitter)
 - pondre blabla de Welcome
-- check compatibilité avec Windows Server 2012
+- ~check compatibilité avec Windows Server 2012~ (yup)
 
 ##DÉVELOPPEMENT##
 - browsehappy ?
@@ -12,7 +12,7 @@
 - #cookies dans reactiveVar ?
 - forgot password
 - gabs éditables 15s après avoir été envoyés (locked -> true)
-- #each rangé chronologiquement / modulairement
+- ~#each rangé chronologiquement / modulairement~
 - [high availibility](https://bulletproofmeteor.com/architecture/deploying-a-highly-available-meteor-cluster)
 
 ##AUTOUR DU PROJET##
