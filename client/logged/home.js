@@ -11,8 +11,10 @@
       $(".navLink").removeClass("currentPage");
       $("#home").addClass("currentPage");
       Session.setDefault("charCount","0");
+      Session.setDefault("gabInProgress","");
 
       $("#gabArea").val(Session.get("gabInProgress"));
+
 
       //    GABEN ULTIMATE COUNTING CHALLENGE
       //var lol;
@@ -32,10 +34,11 @@
           event.preventDefault();
           var content = template.find('#gabArea').value;
 
-          if(isNotEmpty(content))
+          if(isNotEmpty(trimWhiteSpaceInput((content))))
               Meteor.call('createGab', content);
 
           template.find('#gabArea').value = "";
           Session.set("charCount","0");
+          Session.set("gabInProgress","");
       }
   });

@@ -1,0 +1,42 @@
+<template name="gab">
+    <li class="gabContainer" id="{{ _id }}">
+        {{#unless equals author currentUser._id}}
+            <div class="gabStatus {{#if liked _id}} liked {{else}} unliked {{/if}}">
+                <div class="space"></div><span class="heart">&nbsp;♥&nbsp;</span>
+            </div>
+        {{/unless}}
+        <div class="gabPicture">
+            <img src="GabbleN.png" alt="gabbler picture"/>
+        </div>
+        <div class="gabContent">
+            {{#unless equals author currentUser._id}} {{! Is the current user the author ? }}
+                {{#with getUser author }}
+                    {{#if profile.fullname }} {{! Does the author have a fullname ? If yes, then show it. }}
+                        <span class="fullname separator">
+                            {{profile.fullname}}
+                        </span>
+                    {{/if}}
+                {{/with}}
+            {{else}}
+                {{#if currentUser.profile.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
+                    <span class="fullname separator">
+                        {{ currentUser.profile.fullname }}
+                    </span>
+                {{/if}}
+            {{/unless}}
+            <span class="username separator">
+                {{#unless equals author currentUser._id}}
+                    {{#with getUser author }}<a class="{{#if followed username}}followed{{else}}notfollowed{{/if}}" name="{{ _id }}">{{username}}</a>{{/with}}
+                {{else}}
+                    {{ currentUser.username }}
+                {{/unless}}
+            </span>
+
+            <time class="separator"> {{ formatDate createdAt }} </time><time> {{ formatHour createdAt }} </time><br />
+
+            <p>{{ content }}</p>
+
+            {{#if likeCounter}}<div class="gabLikes" style="{{#if equals author currentUser._id}} right:5px {{/if}}"> {{likeCounter}} </div>{{/if}}
+        </div>
+    </li>
+</template>

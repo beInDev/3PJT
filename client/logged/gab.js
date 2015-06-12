@@ -5,18 +5,26 @@ Template.gab.helpers({
 });
 
 Template.gab.events({
-    'click .gabUnliked': function (event) { // LIKE
-        $(event.currentTarget).removeClass("gabUnliked");
-        $(event.currentTarget).addClass("gabLiked");
+    'click .unliked': function (event) { // LIKE
+        var gabId = $(event.target).closest("li").attr("id");
 
-        Meteor.call('addLike', $(event.target).closest("li").attr("id"));
-        Meteor.call('addGab', $(event.target).closest("li").attr("id"));
+        Meteor.call('addLike', gabId);
+        Meteor.call('addGab', gabId);
     },
-    'click .gabLiked': function (event) { // UNLIKE
-        $(event.currentTarget).removeClass("gabLiked");
-        $(event.currentTarget).addClass("gabUnliked");
+    'click .liked': function (event) { // UNLIKE
+        var gabId = $(event.target).closest("li").attr("id");
 
-        Meteor.call('removeLike', $(event.target).closest("li").attr("id"));
-        Meteor.call('removeGab', $(event.target).closest("li").attr("id"));
+        Meteor.call('removeLike', gabId);
+        Meteor.call('removeGab', gabId);
+    },
+    'click .notfollowed': function (event) {
+        var followedName = $(event.currentTarget).text();
+
+        Meteor.call('createFollow', followedName);
+    },
+    'click .followed': function (event) {
+        var followedName = $(event.currentTarget).text();
+
+        Meteor.call('removeFollow', followedName);
     }
 });

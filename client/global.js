@@ -20,3 +20,7 @@ Template.registerHelper('getUser', function (id) {
 Template.registerHelper('equals', function (something, another) {
     return(something == another); // might need === ?
 });
+
+Template.registerHelper('followed', function(followedName) {
+    return (Follows.find({$and: [{"username" : Meteor.user().username}, {"followed": followedName}]}).count() > 0)
+});

@@ -1,7 +1,7 @@
 Meteor.methods({
-    createLikes: function (userId) {
+    createLikes: function (username) {
         Likes.insert({
-            username: userId,
+            username: username,
             likes: []
         }, function(error, likesId) {
             //Meteor.call('', Meteor.userId(), likesId);

@@ -1,5 +1,3 @@
-// Methods File for all your GABS needs !
-
 Meteor.methods({
     createGab: function (content) {
         if (!Meteor.userId()) { // Juuuust making sure
@@ -8,7 +6,7 @@ Meteor.methods({
         Gabs.insert({
             author: Meteor.userId(),
             content: content,
-            likeCounter: 1,
+            likeCounter: 0,
             createdAt: new Date(),
             hidden: false,
             locked: false

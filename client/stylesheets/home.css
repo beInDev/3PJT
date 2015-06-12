@@ -22,6 +22,7 @@
     top: 0;
     right: -25px;
     height: 87px;
+    width: 20px;
 
     background: #7ccaff;
     background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
@@ -29,10 +30,7 @@
     border: 1px solid #3b88c3;
     text-shadow: 0 1px 1px rgba(0,0,0,1);
 }
+#gabSubmit:hover {background: #e57140;  border: 1px solid rgba(0,0,0,0.4);}
 
-#userContainer {
-    padding-left: 5px !important;
-}
+#userContainer { padding-left: 5px !important; }
 
-#currentUsernameContainer {
-}
