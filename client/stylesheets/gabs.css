@@ -64,17 +64,21 @@
 .gabStatus .heart {
     max-height: 100%;
     display: block;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
 }
-.gabStatus .space { height: 40%;
+.gabStatus .space {
+    height: 40%;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
 }
+
 
 .gabStatus {
     text-align: center;
@@ -105,4 +109,31 @@
     font-size: .9em;;
     color: #7ccaff;
     font-weight: 700;
+}
+
+.gabDelete {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    font-size: .9em;;
+    color: #888;
+    font-weight: 900;
+    text-shadow: 0 1px 1px rgba(0,0,0,1);
+
+    text-align: right;
+    cursor: pointer;
+
+    line-height: 100%;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.gabDelete:hover { color: #e57140; text-shadow: 0 1px 1px rgba(216,39,39,1); }
+
+.gabDeleteConfirm {
+    color: #d82727;
+    text-shadow: 0 1px 1px rgba(216,39,39,1);
 }

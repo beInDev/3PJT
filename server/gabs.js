@@ -9,7 +9,8 @@ Meteor.methods({
             likeCounter: 0,
             createdAt: new Date(),
             hidden: false,
-            locked: false
+            locked: false,
+            edited: false
         }, function (error, gabId) { // thats how u retrieve the just-created document's ID !
             //Meteor.call('', Meteor.userId(), gabId);
         });
@@ -19,5 +20,8 @@ Meteor.methods({
     },
     removeLike: function (gabId) {
         Gabs.update(gabId, { $inc : { 'likeCounter' : -1 }});
+    },
+    removeGab: function (gabId) {
+        Gabs.remove(gabId);
     }
 });

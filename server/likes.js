@@ -7,10 +7,10 @@ Meteor.methods({
             //Meteor.call('', Meteor.userId(), likesId);
         });
     },
-    addGab: function (gabId) {
+    likeGab: function (gabId) {
         Likes.update( {username: Meteor.user().username}, {$addToSet : { likes: gabId } });
     },
-    removeGab: function (gabId) {
+    unlikeGab: function (gabId) {
         Likes.update( {username: Meteor.user().username}, {$pull : { likes: gabId } });
     }
 
