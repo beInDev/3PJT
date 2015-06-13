@@ -36,7 +36,7 @@ Template.login.events({
                     username: username,
                     password: password,
                     email: email
-                }, function(err, userId) {
+                }, function(err) {
                     if (err) {
                         console.log(err.message);
                         if (err.message === 'Email already exists. [403]') {
@@ -81,6 +81,7 @@ Template.login.helpers({
 Template.login.onRendered(function () {
     $(".navLink").removeClass("currentPage");
     $("#login").addClass("currentPage");
+    Session.set("Choice", "fullname");
 });
 
 /*
@@ -93,11 +94,7 @@ trimWhiteSpaceInput = function(value) {
 };
 
 isNotEmpty = function(value) {
-    if (value && value !== ''){
-        return true;
-    }
-    console.warn('Please fill in all fields.');
-    return false;
+    return (value && value !== '')
 };
 
 isEmail = function(value) {

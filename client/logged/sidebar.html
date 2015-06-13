@@ -1,5 +1,5 @@
 <template name="sidebar">
-    <div id="sidebarContainer" class="container">
+    <div class="sidebarContainer container">
         <h2>You are following :</h2>
         {{#if follows}}
             <ul id="followsContainer">
@@ -7,16 +7,24 @@
                 {{>follow}}
             {{/each}}
             </ul>
+
+            <div id="followsQuantity">
+                <a id="more">Show more !</a>
+                <a id="less">Show less</a>
+            </div>
+
         {{else}}
             <div id="solo">
-                ??? WTF GET A LYFE
+                You are not following anyone at the moment.
+                By clicking on their username, you may access a person's profile
+                and follow them. Their gabs will then be shown on your homepage !
             </div>
         {{/if}}
-
-        <div id="followsQuantity">
-            <a id="more">Show more !</a>
-            <a id="less">Show less</a>
-        </div>
+    </div>
+    <div class="sidebarContainer container ">
+        <form id="profileLooker">
+            <input type="text" id="lookerInput" placeholder="Username profile to visit">
+        </form>
     </div>
 </template>
 

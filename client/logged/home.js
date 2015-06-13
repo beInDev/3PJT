@@ -7,14 +7,22 @@
       }
   });
 
-  Template.home.onRendered(function () { /* Not the most beautiful way to do this ... */
+  Template.home.onRendered(function () {
       $(".navLink").removeClass("currentPage");
       $("#home").addClass("currentPage");
       Session.setDefault("charCount","0");
       Session.setDefault("gabInProgress","");
+      Session.set("Choice", "fullname");
 
-      $("#gabArea").val(Session.get("gabInProgress"));
+      var gabTextArea = $("#gabArea");
 
+      gabTextArea.val(Session.get("gabInProgress"));
+
+      gabTextArea.keypress(function(event) {
+          if (event.keyCode == 13) { // 13 = Enter (to prevent Return Carriage)
+              event.preventDefault();
+          }
+      });
 
       //    GABEN ULTIMATE COUNTING CHALLENGE
       //var lol;

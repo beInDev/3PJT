@@ -3,11 +3,13 @@
             {{> nav }}
         </header>
 
-        <main>
+        <main style="background: #7ccaff url('{{#if username}}{{#with getUserData username}}{{backgroundUrl}}{{/with}}{{else}}{{#with getUserData currentUser.username}}{{backgroundUrl}}{{/with}}{{/if}}'); background-size: 100%">
             <div class="wrapper">
 
                 {{#if currentUser}}
-                    {{> sidebar }}
+                    <div id="sidebarWrapper">
+                        {{> sidebar }}
+                    </div>
                 {{/if}}
 
                 {{> yield }}

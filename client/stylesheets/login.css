@@ -24,7 +24,7 @@
 #formsLogin {  padding: 0 5px 0 0; width: 25%; }
 #formsLogin form:first-child table { padding: 0 0 20px 0; border-bottom: 1px solid rgba(46, 50, 52, .7); margin: 0 0 20px 0;}
 
-input[type=submit] {
+#loginContainer input[type=submit] {
     color: #fff;
     transition: 0s;
     margin: 0;

@@ -95,9 +95,9 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.gabStatus:hover { background: #e57140;  border: 1px solid rgba(0,0,0,0.4); transition: 0s; }
+.gabStatus:hover { background: #7ccaff; border: 1px solid #3b88c3; transition: 0s; }
 
-.liked { color: white; background: #7ccaff; border: 1px solid #3b88c3; }
+.liked { color: white; background: #e57140; border: 1px solid rgba(0,0,0,0.4); }
 .unliked { color: black; background: #cecece; border: 1px solid rgba(0,0,0,0.4); }
 
 .gabLikes {
@@ -106,8 +106,8 @@
     right: 22px;
     text-align: right;
 
-    font-size: .9em;;
-    color: #7ccaff;
+    font-size: .9em;
+    color: #e57140;
     font-weight: 700;
 }
 

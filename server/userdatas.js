@@ -3,10 +3,10 @@ Meteor.methods({
         UserDatas.insert({
             username: username,
             fullname: "",
-            avatarUrl: "/profilpictures/default_pics.jpg",
+            avatarUrl: "/profilepictures/default_pics.jpg",
             backgroundUrl: "",
-            title: "",
-            msg: ""
+            title: "Welcome on my profile !",
+            msg: "This page displays every single one of my Gabs. It is a personal, customizable place! Don't forget to Follow me!"
         }, function(error, username) {
             //Meteor.call('', Meteor.userId(), likesId);
         });

@@ -3,5 +3,8 @@ Template.nav.events({
         Router.go('/home');
         $(".navLink").removeClass("currentPage");
         $("#home").addClass("currentPage");
+    },
+    'click #logout': function () {
+        Meteor.logout();
     }
 });

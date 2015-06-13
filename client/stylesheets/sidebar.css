@@ -1,12 +1,26 @@
-#sidebarContainer {
-    margin: auto;
+#sidebarWrapper {
+    min-width: 200px;
+    max-width: 220px;
+    float: left;
+
+    text-align: center;
+}
+#sidebarWrapper:first-child {
+    margin-bottom: 25px;
+}
+
+.sidebarContainer {
+    margin-bottom: 25px !important;
     min-width: 200px;
     max-width: 400px;
     display: inline-block;
     float: left;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 15px !important;
+
+    width: 100%;
 }
+
 
 #followsContainer {
     list-style: none;
@@ -34,20 +48,17 @@
 }
 
 #solo {
+    width: 210px;
     padding: 5px;
-    background: #fff;
-    border-radius: 3px;
-    border: solid rgba(0,0,0,0.4);
-    border-width: 1px 1px 1px 1px;
+    background: #bde4fe;
+    border-radius: 15px;
+    border: solid 1px #e57140;
     transition: 0s;
-    font-size: .9em;
+    font-size: .8em;
     text-align: center;
     margin: 5px 0 5px 0;
-    cursor: pointer;
-}
-#solo:hover {
-    background: #eee;
-    transition: 0s;
+
+    line-height: 17px;
 }
 
 #followsQuantity a {
@@ -58,3 +69,5 @@
 }
 #more { float: left}
 #less { float: right}
+
+#lookerInput { margin-left: -5px; width: 100%; }

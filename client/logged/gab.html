@@ -8,7 +8,11 @@
             <span class="gabDelete">∅</span>
         {{/unless}}
         <div class="gabPicture">
-            <img src="/profilepictures/GabbleN.png" alt="gabbler picture"/>
+            {{#if equals author currentUser.username}}
+                <img src="{{currentUserData.avatarUrl}}" alt="gabbler picture"/>
+            {{else}}
+                <img src="{{#with getUserData author}}{{avatarUrl}}{{/with}}" alt="gabbler picture"/>
+            {{/if}}
         </div>
         <div class="gabContent">
             {{#unless equals author currentUser.username}} {{! Is the current user the author ? }}
@@ -39,7 +43,7 @@
             <p>{{ content }}</p>
 
             {{#if likeCounter}}
-                <div class="gabLikes" style="{{#if equals author currentUser._id}} right:5px {{/if}}"> {{likeCounter}} </div>
+                <div class="gabLikes" style="{{#if equals author currentUser.username}} right:7px {{/if}}"> {{likeCounter}} </div>
             {{/if}}
         </div>
     </li>

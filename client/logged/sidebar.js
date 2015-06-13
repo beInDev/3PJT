@@ -16,8 +16,15 @@ Template.sidebar.events({
         if(Session.get("MoreFollows")>1)
             Session.set("MoreFollows", Session.get("MoreFollows") - 1);
     },
-    'click .followContainer': function () {
+    'click .followContainer': function (event) {
         var followed = $(event.target).closest("li").attr("id");
         Router.go("/profile/"+followed);
+    },
+    'submit #profileLooker': function (event, template) {
+        event.preventDefault();
+        var lookerInput = template.find('#lookerInput');
+
+        Router.go("/profile/"+lookerInput.value);
+        lookerInput.value = "";
     }
 });

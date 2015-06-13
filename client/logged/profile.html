@@ -1,13 +1,55 @@
 <template name="profile">
     <div id="profileWrapper">
-        <div class="profileContainer container">
-            {{_id}} : {{username}} <br />
-            {{emails.[0].address}} : {{ profile.fullname}}
+
+        {{#if equals username currentUser.username}}
+            <div class="container" id="customizeContainer">
+                <div id="choiceContainer">
+                    <div class="choice chosen"    id="fullname">fullname</div>
+                    <div class="choice notChosen" id="avatarUrl">picture</div>
+                    <div class="choice notChosen" id="backgroundUrl">background</div>
+                    <div class="choice notChosen" id="title">title</div>
+                    <div class="choice notChosen" id="msg">message</div>
+                </div>
+
+                <form>
+                    <label>
+                        <textarea id="customizeInput" placeholder="Your full name will be displayed next to your username.">{{#with getUserData currentUser.username}}{{fullname}}{{/with}}</textarea></label>
+                    <input type="button" value="cancel" class="customInputs" id="customizeCancel">
+                    <input type="submit" value="apply" class="customInputs" id="customizeSubmit">
+                </form>
+            </div>
+        {{/if}}
+
+
+        <div class="container" id="profileContainer"> <!-- style="background: url({{#with getUserData username}}{{avatarUrl}}{{/with}})" -->
+                {{#with getUserData username}}
+                    <h3 id="profileTitle" class="profileContent">{{title}}</h3>
+                    <span id="profileMessage" class="profileContent">{{msg}}</span>
+                {{/with}}
+                <div id="profileDetails">
+                    <div class="profileDetailsContainer">
+                        <div class="profileDetails" id="profileLikes" title="Number of Likes received">
+                            {{numberOfLikes username}}<span class="symbol">♥</span>
+                        </div>
+                    </div>
+                    <div class="profileDetailsContainer">
+                        <div class="profileDetails" id="profileFollows" title="Number of Followers">
+                            {{numberOfFollowers username}}<span class="symbol">♦</span>
+                        </div>
+                    </div>
+                    <div class="profileDetailsContainer">
+                        {{#unless equals username currentUser.username}}
+                            <div id="profileFollowStatus" class="{{#if following username }} followed {{else}} unfollowed {{/if}}" title="{{username}}">
+                                ♦ follow{{#if following username }}ed{{/if}} ♦
+                            </div>
+                        {{/unless}}
+                    </div>
+                </div>
         </div>
 
-        {{#if profileGabs _id}}
+        {{#if profileGabs username}}
         <ul class="gabsContainer">
-            {{#each profileGabs _id }}
+            {{#each profileGabs username }}
                 {{> gab }}
             {{/each}}
         </ul>

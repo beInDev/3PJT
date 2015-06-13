@@ -7,3 +7,99 @@
 
     float: right;
 }
+
+#profileContainer { width: 490px; padding: 15px 15px 7px 15px !important; }
+#profileContainer img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
+
+#customizeContainer {width: 522px; padding: 0 0 15px 0 !important; margin-bottom: 15px; height: 60px;}
+
+#choiceContainer {
+    height: 20px;
+    width: 100%;
+    display: table;
+    text-align: center;
+    border-bottom: 1px solid #2E3234;
+}
+
+.choice {
+    padding: 3px;
+    width: 20%;
+    display: table-cell;
+
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#0C000000)";
+    text-shadow: 0 1px 1px rgba(0,0,0,.5);
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    border-left: 1px solid #2E3234;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+.choice:first-child{
+    border: none;
+}
+.choice:hover { background: #7ccaff; color: white;}
+
+.chosen { color: white; background: #e57140;; text-shadow: 0 1px 1px rgba(0,0,0,.7);  }
+.notChosen { color: black; background: #cecece;  }
+
+#customizeInput {
+    width: 69%;
+    margin: 7px 7px 0 18px;
+    height: 28px;
+}
+
+#profileMessage { word-wrap: break-word; }
+
+.customInputs {
+    color: #fff;
+    transition: 0s;
+    margin: 13px 5px 0 0;
+    font-weight: 700;
+    border-radius: 3px;
+
+    background: #7ccaff;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#0C000000)";
+
+    text-shadow: 0 1px 1px rgba(0,0,0,1);
+}
+#customizeCancel { background: #e57140; border: 1px solid rgba(0,0,0,0.4);}
+#customizeSubmit { background: #7ccaff; border: 1px solid #3b88c3;}
+
+.profileContent { border-bottom: 1px solid #3b88c3; padding-bottom: 5px; margin-bottom: 5px; display: block;}
+
+#profileDetails { text-align: center; color: #3b88c3; font-weight: 700; width: 100%; display: table;}
+#profileDetails .symbol { font-size: 1.2em;}
+
+.profileDetailsContainer { width: 30%; display: table-cell}
+.profileDetails { display: inline-block; border-bottom: 1px dashed #3b88c3; cursor: help}
+
+#profileFollowStatus {
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    height: 100%;
+
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#0C000000)";
+    border-radius: 3px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.6);
+
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+#profileFollowStatus:hover {
+    background: #7ccaff;  border: 1px solid rgba(0,0,0,0.4); transition: 0s;
+}
+.followed { color: white; background: #e57140; border: 1px solid rgba(0,0,0,0.4);}
+.unfollowed { color: black; background: #cecece; border: 1px solid rgba(0,0,0,0.4); }
