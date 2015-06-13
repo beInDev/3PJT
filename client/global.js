@@ -21,6 +21,13 @@ Template.registerHelper('getUserByName', function (username) {
     return Meteor.users.findOne({username: username});
 });
 
+Template.registerHelper('getUserData', function (username) {
+    return UserDatas.findOne({username: username});
+});
+
+Template.registerHelper('currentUserData', function () {
+    return UserDatas.findOne({username: Meteor.user().username});
+});
 
 Template.registerHelper('equals', function (something, another) {
     return(something == another); // might need === ?

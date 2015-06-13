@@ -1,6 +1,6 @@
 <template name="gab">
     <li class="gabContainer" id="{{ _id }}">
-        {{#unless equals author currentUser._id}}
+        {{#unless equals author currentUser.username}}
             <div class="gabStatus {{#if liked _id}} liked {{else}} unliked {{/if}}">
                 <div class="space"></div><span class="heart">&nbsp;♥&nbsp;</span>
             </div>
@@ -11,24 +11,24 @@
             <img src="/profilepictures/GabbleN.png" alt="gabbler picture"/>
         </div>
         <div class="gabContent">
-            {{#unless equals author currentUser._id}} {{! Is the current user the author ? }}
-                {{#with getUser author }}
-                    {{#if profile.fullname }} {{! Does the author have a fullname ? If yes, then show it. }}
+            {{#unless equals author currentUser.username}} {{! Is the current user the author ? }}
+                {{#with getUserData author }}
+                    {{#if fullname }} {{! Does the author have a fullname ? If yes, then show it. }}
                         <span class="fullname separator">
-                            <a href="/profile/{{username}}" class="nameLink">{{profile.fullname}}</a>
+                            <a href="/profile/{{username}}" class="nameLink">{{fullname}}</a>
                         </span>
                     {{/if}}
                 {{/with}}
             {{else}}
-                {{#if currentUser.profile.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
+                {{#if currentUserData.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
                     <span class="fullname separator">
-                        {{ currentUser.profile.fullname }}
+                        {{ currentUserData.fullname }}
                     </span>
                 {{/if}}
             {{/unless}}
             <span class="username separator">
-                {{#unless equals author currentUser._id}}
-                    {{#with getUser author }}<a href="/profile/{{username}}" class="userLink">{{username}}</a>{{/with}}
+                {{#unless equals author currentUser.username}}
+                    {{#with getUserData author }}<a href="/profile/{{username}}" class="userLink">{{username}}</a>{{/with}}
                 {{else}}
                     {{ currentUser.username }}
                 {{/unless}}

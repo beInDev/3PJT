@@ -3,11 +3,10 @@ Meteor.methods({
         UserDatas.insert({
             username: username,
             fullname: "",
-            avatarUrl: "http://mylakers.com/images/userimg/default_pics.jpg",
+            avatarUrl: "/profilpictures/default_pics.jpg",
             backgroundUrl: "",
             title: "",
-            msg: "",
-
+            msg: ""
         }, function(error, username) {
             //Meteor.call('', Meteor.userId(), likesId);
         });

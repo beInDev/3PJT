@@ -6,9 +6,9 @@
                 <tr>
                     <td></td>
                     <td id="currentUsernameContainer">
-                        {{#if currentUser.profile.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
+                        {{#if currentUserData.fullname }} {{! Does the current user have a fullname ? If yes, then show it. }}
                             <span class="fullname separator">
-                                {{ currentUser.profile.fullname }}
+                                {{ currentUserData.fullname }}
                             </span>
                         {{/if}}
                         <span class="username">{{currentUser.username}}</span>

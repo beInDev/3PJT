@@ -4,7 +4,7 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
         Gabs.insert({
-            author: Meteor.userId(),
+            author: Meteor.user().username,
             content: content,
             likeCounter: 0,
             createdAt: new Date(),

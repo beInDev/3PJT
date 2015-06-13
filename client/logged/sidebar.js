@@ -4,7 +4,7 @@ Template.sidebar.onRendered(function () {
 
 Template.sidebar.helpers({
     follows: function () {
-        return Follows.find({username: Meteor.user().username}).fetch().reverse().slice(0, Session.get("MoreFollows")*0);
+        return Follows.find({username: Meteor.user().username}).fetch().reverse().slice(0, Session.get("MoreFollows")*3);
     }
 });
 

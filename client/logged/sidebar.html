@@ -21,10 +21,12 @@
 </template>
 
 <template name="follow">
-    {{#with getUserByName followed }}
-            <li class="followContainer" id="{{username}}">
-                <span class="fullname {{#if profile.fullname}}separator{{/if}}"> {{profile.fullname}} </span>
-                <span class="username"> {{username}}</span>
+
+            <li class="followContainer" id="{{followed}}">
+                {{#with getUserData followed }}
+                    <span class="fullname {{#if fullname}}separator{{/if}}"> {{fullname}} </span>
+                {{/with}}
+                <span class="username"> {{followed}}</span>
             </li>
-    {{/with}}
+
 </template>
