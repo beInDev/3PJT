@@ -55,6 +55,9 @@ Template.profile.events({
 
         switch(selectedId) {
             case "avatarUrl":
+                if(isNotEmpty(trimWhiteSpaceInput(currentUserData.backgroundUrl)) && currentUserData.backgroundUrl != "/profilepictures/default_pics.jpg")
+                    customizeTextArea.value = currentUserData.backgroundUrl;
+                else
                customizeTextArea.value = "";
                customizeTextArea.placeholder = "Enter a complete URL to your future profile picture !";
                 break;
