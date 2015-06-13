@@ -1,0 +1,48 @@
+#sidebarContainer {
+    margin: auto;
+    min-width: 200px;
+    max-width: 400px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+#followsContainer {
+    list-style: none;
+    margin: 20px 0 25px 0;
+    padding: 0;
+}
+.followContainer {
+    padding: 5px;
+    background: #fff;
+    border-radius: 3px;
+    border: solid rgba(0,0,0,0.4);
+    border-width: 1px 1px 0 1px;
+    transition: 0s;
+    font-size: .9em;
+    position: relative;
+    cursor: pointer;
+    text-align: right;
+}
+.followContainer:last-child {
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+.followContainer:hover {
+    background: #eee;
+    transition: 0s;
+}
+
+#solo {
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    margin: 5px 0 5px 0;
+}
+
+#followsQuantity a {
+    color: #3b88c3;
+    font-size: 0.8em;
+    display: inline-block;
+    cursor: pointer;
+}
+#more { float: left}
+#less { float: right}

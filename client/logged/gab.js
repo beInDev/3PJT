@@ -17,16 +17,6 @@ Template.gab.events({
         Meteor.call('removeLike', gabId);
         Meteor.call('unlikeGab', gabId);
     },
-    'click .notfollowed': function (event) {
-        var followedName = $(event.currentTarget).text();
-
-        Meteor.call('createFollow', followedName);
-    },
-    'click .followed': function (event) {
-        var followedName = $(event.currentTarget).text();
-
-        Meteor.call('removeFollow', followedName);
-    },
     'click .gabDelete': function (event) {
         var deleteButton = $(event.target);
         Session.set("confirmDelete", deleteButton.closest("li").attr("id"));
@@ -38,3 +28,24 @@ Template.gab.events({
         Session.set("confirmDelete","");
     }
 });
+
+/*
+        FOLLOW SYSTEM
+ ,
+ 'click .notfollowed': function (event) {
+ var followedName = $(event.currentTarget).text();
+
+ Meteor.call('createFollow', followedName);
+ },
+ 'click .followed': function (event) {
+ var followedName = $(event.currentTarget).text();
+
+ Meteor.call('removeFollow', followedName);
+ }
+
+
+
+ <a class="{{#if following username}}followed{{else}}notfollowed{{/if}}" name="{{ _id }}">
+
+
+ */

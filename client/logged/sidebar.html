@@ -1,0 +1,30 @@
+<template name="sidebar">
+    <div id="sidebarContainer" class="container">
+        <h2>You are following :</h2>
+        {{#if follows}}
+            <ul id="followsContainer">
+            {{#each follows}}
+                {{>follow}}
+            {{/each}}
+            </ul>
+        {{else}}
+            <div class="followContainer" id="solo">
+                ??? WTF GET A LYFE
+            </div>
+        {{/if}}
+
+        <div id="followsQuantity">
+            <a id="more">Show more !</a>
+            <a id="less">Show less</a>
+        </div>
+    </div>
+</template>
+
+<template name="follow">
+    {{#with getUserByName followed }}
+            <li class="followContainer" id="{{username}}">
+                <span class="fullname {{#if profile.fullname}}separator{{/if}}"> {{profile.fullname}} </span>
+                <span class="username"> {{username}}</span>
+            </li>
+    {{/with}}
+</template>

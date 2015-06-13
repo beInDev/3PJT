@@ -8,14 +8,14 @@
             <span class="gabDelete">∅</span>
         {{/unless}}
         <div class="gabPicture">
-            <img src="GabbleN.png" alt="gabbler picture"/>
+            <img src="/profilepictures/GabbleN.png" alt="gabbler picture"/>
         </div>
         <div class="gabContent">
             {{#unless equals author currentUser._id}} {{! Is the current user the author ? }}
                 {{#with getUser author }}
                     {{#if profile.fullname }} {{! Does the author have a fullname ? If yes, then show it. }}
                         <span class="fullname separator">
-                            {{profile.fullname}}
+                            <a href="/profile/{{username}}" class="nameLink">{{profile.fullname}}</a>
                         </span>
                     {{/if}}
                 {{/with}}
@@ -28,7 +28,7 @@
             {{/unless}}
             <span class="username separator">
                 {{#unless equals author currentUser._id}}
-                    {{#with getUser author }}<a class="{{#if followed username}}followed{{else}}notfollowed{{/if}}" name="{{ _id }}">{{username}}</a>{{/with}}
+                    {{#with getUser author }}<a href="/profile/{{username}}" class="userLink">{{username}}</a>{{/with}}
                 {{else}}
                     {{ currentUser.username }}
                 {{/unless}}

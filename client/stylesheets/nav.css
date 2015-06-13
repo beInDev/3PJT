@@ -49,8 +49,8 @@ nav li:last-child{ margin: 0 5px 0 0; }
     display: block;
     margin: auto;
 
-    width: 70%;
-    min-width: 725px;
+    width: 60%;
+    min-width: 555px;
 }
 
 .currentPage {

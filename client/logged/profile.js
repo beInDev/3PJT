@@ -1,3 +1,9 @@
+Template.profile.helpers({
+    profileGabs: function (profileId) {
+        return Gabs.find({author: profileId}).fetch().reverse();
+    }
+});
+
 Template.profile.onRendered(function () { /* Not the most beautiful way to do this ... */
     $(".navLink").removeClass("currentPage");
     $("#profile").addClass("currentPage");
@@ -24,9 +30,6 @@ Template.profile.events({
         var fullname = template.find('#profileFullname').value;
         var pictureUrl = template.find('#pictureUrl').value;
         Meteor.users.update({_id: Meteor.userId()}, { $set : { 'profile' : { 'fullname' : fullname }}});
-        Meteor.call('updateAvatar', Meteor.user().username, pictureUrl);
-        Meteor.call('updateFullname', Meteor.user().username, fullname);
-
     },
     'keyup #pictureUrl': function (event, template) {
       Template.profile.pictureUrl = event.currentTarget.value;

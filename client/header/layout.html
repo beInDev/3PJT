@@ -5,6 +5,11 @@
 
         <main>
             <div class="wrapper">
+
+                {{#if currentUser}}
+                    {{> sidebar }}
+                {{/if}}
+
                 {{> yield }}
             </div>
         </main>
