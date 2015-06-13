@@ -5,7 +5,7 @@
             <ul>
                 {{#if currentUser}}
                     <li><a href="/home" id="home" class="navLink">Home</a></li>
-                    <li><a href="/profile/{{currentUser.username}}" id="profile" class="navLink">Profile</a></li>
+                    <li><a href="/profile/{{currentUser.username}}" id="profile" class="navLink">Profile {{#if username}}: {{username}}{{/if}}</a></li>
                     <li><a href="" id="logout" class="navLink" title="Logging out !">{{currentUser.username}} <span class="symbol">[<span class="symbol2">⟩</span></span></a></li>
                 {{else}}
                     <li><a href="{{pathFor 'login'}}" id="login" class="navLink">Login</a></li>

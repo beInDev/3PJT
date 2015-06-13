@@ -17,7 +17,9 @@
                 <tr>
                     <td>
                         <div class="content" id="pictureContainer">
-                            <img src="{{currentUserData.avatarUrl}}" alt="profile picture" id="userPicture"/>
+                            <img src="{{currentUserData.avatarUrl}}"
+                                 onerror="if (this.src != '/profilepictures/default_pics.jpg') this.src = '/profilepictures/default_pics.jpg';"
+                                 alt="profile picture" id="userPicture"/>
                         </div>
                     </td>
                     <td>

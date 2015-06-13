@@ -56,17 +56,22 @@ Template.profile.events({
         switch(selectedId) {
             case "avatarUrl":
                 if(isNotEmpty(trimWhiteSpaceInput(currentUserData.backgroundUrl)) && currentUserData.backgroundUrl != "/profilepictures/default_pics.jpg")
-                    customizeTextArea.value = currentUserData.backgroundUrl;
+                    customizeTextArea.value = currentUserData.avatarUrl;
                 else
-               customizeTextArea.value = "";
-               customizeTextArea.placeholder = "Enter a complete URL to your future profile picture !";
+                {
+                    customizeTextArea.value = "";
+                    customizeTextArea.placeholder = "Enter a complete URL to your future profile picture !";
+                }
+
                 break;
             case "backgroundUrl":
                 if(isNotEmpty(trimWhiteSpaceInput(currentUserData.backgroundUrl)))
                    customizeTextArea.value = currentUserData.backgroundUrl;
                 else
+                {
                    customizeTextArea.value = "";
                    customizeTextArea.placeholder = "Enter a complete URL to your new background picture !";
+                }
                 break;
             case "title":
                 customizeTextArea.value = currentUserData.title;
