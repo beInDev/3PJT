@@ -1,14 +1,17 @@
-.charCount { color: #aaa; font-size: .75em; float: right; margin: -5px 2px 0 0; }
-
-#userContainer img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
-
 #homeWrapper {
     margin: auto;
     display: table;
     min-width: 500px;
     max-width: 500px;
     width: 500px;
+
+    float: right;
 }
+
+.charCount { color: #aaa; font-size: .75em; float: right; margin: -5px 2px 0 0; }
+
+#userContainer img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
+
 
 #gabForm {
     display: inline-block;

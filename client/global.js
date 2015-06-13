@@ -17,10 +17,15 @@ Template.registerHelper('getUser', function (id) {
     return Meteor.users.findOne({_id: id});
 });
 
+Template.registerHelper('getUserByName', function (username) {
+    return Meteor.users.findOne({username: username});
+});
+
+
 Template.registerHelper('equals', function (something, another) {
     return(something == another); // might need === ?
 });
 
-Template.registerHelper('followed', function(followedName) {
+Template.registerHelper('following', function(followedName) {
     return (Follows.find({$and: [{"username" : Meteor.user().username}, {"followed": followedName}]}).count() > 0)
 });

@@ -1,34 +1,14 @@
 <template name="profile">
-    <div id="profileContainer" class="container">
-        {{#if currentUser}}
-            <div class="content" id="formsProfile">
-                <h2>Manage your profile</h2>
+    <div id="profileWrapper">
+        <div class="profileContainer container">
+            {{_id}} : {{username}} <br />
+            {{emails.[0].address}} : {{ profile.fullname}}
+        </div>
 
-                <form id="profileForm">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td colspan="2">
-                                    <div id="profileMessage" class="warning">{{ profileMessage }}</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input name="fullname" type="text" id="profileFullname" placeholder="Fullname" size="28" maxlength="20"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input name="lastname" type="text" id="profileLastname" placeholder="Lastname" maxlength="18"/>
-                                </td>
-                                <td>
-                                    <input type="submit" id="profileSubmit" value="Log in">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-            </div>
-        {{/if}}
+        <ul class="gabsContainer">
+            {{#each profileGabs _id }}
+                {{> gab }}
+            {{/each}}
+        </ul>
     </div>
 </template>
