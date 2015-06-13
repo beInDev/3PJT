@@ -31,6 +31,7 @@ Template.login.events({
         {
             if(isEmail(email) && isValidUsername(username) && isValidPassword(password))
             {
+
                 Accounts.createUser({
                     username: username,
                     password: password,
@@ -48,6 +49,7 @@ Template.login.events({
                     }
                 });
                 Meteor.call('createLikes', username); // Once the user is registered we can create his Likes document.
+                Meteor.call('createData', username);
             }
             else
             {

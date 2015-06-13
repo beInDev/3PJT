@@ -14,13 +14,16 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <input name="fullname" type="text" id="profileFullname" placeholder="Fullname" size="28" maxlength="20"/>
+                                    <img src="{{profilePicture}}" alt="Profile Picture" id="profilePicture" height="50" width="50"/>
+                                    <input name="pictureUrl" type="text" id="pictureUrl" placeholder="Insert picture URL here" value="{{profilePicture}}"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <input name="lastname" type="text" id="profileLastname" placeholder="Lastname" maxlength="18"/>
+                                <td colspan="2">
+                                    <input name="fullname" type="text" id="profileFullname" placeholder="Fullname" size="28" maxlength="20" value="{{fullName}}"/>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <input type="submit" id="profileSubmit" value="Log in">
                                 </td>
