@@ -5,10 +5,12 @@
             {{emails.[0].address}} : {{ profile.fullname}}
         </div>
 
+        {{#if profileGabs _id}}
         <ul class="gabsContainer">
             {{#each profileGabs _id }}
                 {{> gab }}
             {{/each}}
         </ul>
+        {{/if}}
     </div>
 </template>

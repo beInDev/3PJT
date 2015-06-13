@@ -15,7 +15,6 @@ Template.profile.helpers({
       if(data)
         return data.avatarUrl;
     },
-
     fullName: function() {
       var data = UserDatas.findOne({username: Meteor.user().username});
       if(data)
