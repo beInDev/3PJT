@@ -9,10 +9,11 @@
         {{/unless}}
         <div class="gabPicture">
             {{#if equals author currentUser.username}}
-                <img src="{{currentUserData.avatarUrl}}" alt="author picture"
+                <img src="{{currentUserData.avatarUrl}}" alt="your picture"
                      onerror="if (this.src != '/profilepictures/default_pics.jpg') this.src = '/profilepictures/default_pics.jpg';"/>
             {{else}}
-                <img src="{{#with getUserData author}}{{avatarUrl}}{{/with}}" alt="gabbler picture"/>
+                <img src="{{#with getUserData author}}{{avatarUrl}}{{/with}}" alt="gab author picture"
+                     onerror="if (this.src != '/profilepictures/default_pics.jpg') this.src = '/profilepictures/default_pics.jpg';"/>
             {{/if}}
         </div>
         <div class="gabContent">
