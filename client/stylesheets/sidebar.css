@@ -4,6 +4,7 @@
     float: left;
 
     text-align: center;
+    position: fixed;
 }
 #sidebarWrapper:first-child {
     margin-bottom: 25px;
