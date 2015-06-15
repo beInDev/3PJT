@@ -48,5 +48,9 @@
           template.find('#gabArea').value = "";
           Session.set("charCount","0");
           Session.set("gabInProgress","");
+      },
+      'click #pictureContainer': function () {
+          Router.go("/profile/"+Meteor.user().username);
+          Session.set("Choice", "avatarUrl")
       }
   });

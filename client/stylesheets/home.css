@@ -9,8 +9,8 @@
 }
 
 #userContainer { width: 485px; padding-left: 5px !important; }
-#userContainer img { border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
-
+#pictureContainer img { cursor: pointer; transition: 0.1s; border-radius: 10%; border: 2px solid rgba(46, 50, 52, .6);width: 80px; height: 80px; display: inline; }
+#pictureContainer img:hover {opacity: 0.7; border: 2px solid rgba(46, 50, 52, .8) }
 #gabForm {
     display: inline-block;
     position: relative;

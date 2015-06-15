@@ -3,10 +3,10 @@ Template.profile.helpers({
         return Gabs.find({author: profileUsername}).fetch().reverse();
     },
     numberOfLikes: function (profileUsername) {
-        var demLikes = Gabs.find({author: profileUsername});
+        var demGabs = Gabs.find({author: profileUsername});
         var numberOfLikes = 0;
 
-        demLikes.forEach(function (each) {
+        demGabs.forEach(function (each) {
             numberOfLikes = numberOfLikes + each.likeCounter;
         });
 

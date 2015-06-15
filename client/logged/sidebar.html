@@ -26,15 +26,30 @@
             <input type="text" id="lookerInput" placeholder="Username profile to visit">
         </form>
     </div>
+    <div class="sidebarContainer container ">
+        <h2>Popular Gabblers :</h2>
+        <ul id="followsContainer">
+            {{#each populars}}
+                {{> popular}}
+            {{/each}}
+        </ul>
+    </div>
 </template>
 
 <template name="follow">
-
             <li class="followContainer" id="{{followed}}">
                 {{#with getUserData followed }}
                     <span class="fullname {{#if fullname}}separator{{/if}}"> {{fullname}} </span>
                 {{/with}}
                 <span class="username"> {{followed}}</span>
             </li>
+</template>
 
+<template name="popular">
+    <li class="followContainer" id="{{username}}">
+        {{#with getUserData username }}
+            <span class="fullname {{#if fullname}}separator{{/if}}"> {{fullname}} </span>
+        {{/with}}
+        <span class="username"> {{username}}</span>
+    </li>
 </template>

@@ -41,7 +41,12 @@
         {{#if gabs }}
             <ul class="gabsContainer">
                 {{#each gabs}}
-                    {{> gab}}
+                    {{#if following author}}
+                        {{> gab }}
+                    {{/if}}
+                    {{#if equals currentUser.username author }}
+                        {{>gab}}
+                    {{/if}}
                 {{/each}}
             </ul>
         {{/if}}

@@ -1,0 +1,13 @@
+<template name="notFound">
+    {{#if currentUser }}
+    <div id="homeWrapper">
+        <div id="userContainer" class="homeContainer container">
+            <h2>Woops !</h2>
+            <p>We're sorry, but the page you are looking for does not seem to exist.<br /><br/>
+            Use the upper bar to navigate your way back to safety!</p>
+        </div>
+    </div>
+    {{else}}
+        {{>login}}
+    {{/if}}
+</template>

@@ -17,10 +17,6 @@ a:hover { opacity: 0.8; transition: 0s; }
 .username { color: #8899a6; font-size: .9em }
 .userLink, .userLink:visited { color: #8899a6; text-decoration: none; }
 .userLink:hover { text-decoration: underline; }
-/* FOLLOW SYSTEM (2B Changed)
-.notfollowed { text-decoration: underline; cursor: pointer; transition: 0s; }
-.followed { color: #e57140; font-weight: 700; cursor: pointer; }
-*/
 time { font-size: .9em; color: #88A5C4 }
 
 
