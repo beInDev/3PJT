@@ -19,7 +19,7 @@ retourner, au minimum, les packages suivants :
 - jQuery (1.11.3_2)
 - meteor-platform (1.2.2)
 - mrt:moment (2.8.1)
-- 
+
 S’il venait à manquer certains de ces packages, vous pouvez essayer de les installer
 manuellement via la commande ```meteor add [packagename]```
 Accessoirement, la base de données Mongo peut être accédée (en local) via la
